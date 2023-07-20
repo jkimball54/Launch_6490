@@ -24,11 +24,11 @@ namespace Tourism.Controllers
         {
             _context.States.Add(state);
             _context.SaveChanges();
-            var newStateId = state.Id;
+            var stateId = state.Id;
 
-            return RedirectToAction("show", new{id = newStateId});
+            return RedirectToAction("show", new{id = stateId});
             //even though show action has the route specified
-            //this still sends me to /states/show/stateId for some reason, spent to much time trying to figure this out :(
+            //this still sends me to /states/show/stateId for some reason, spent too much time trying to figure this out :(
         }
 
 

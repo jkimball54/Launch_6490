@@ -46,7 +46,7 @@ namespace Tourism.FeatureTests
             context.States.Add(new State { Name = "Iowa", Abbreviation = "IA" });
             context.SaveChanges();
 
-            var response = await client.GetAsync("/states/1/cities/new");
+            var response = await client.GetAsync("/tates/1/cities/new");
             var html = await response.Content.ReadAsStringAsync();
 
             Assert.Contains("Add city to Iowa", html);

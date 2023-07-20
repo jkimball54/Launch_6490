@@ -25,7 +25,7 @@ namespace Tourism.FeatureTests
             context.States.Add(new State { Name = "Colorado", Abbreviation = "CO" });
             context.SaveChanges();
 
-            var response = await client.GetAsync("/states");
+            var response = await client.GetAsync("/States");
             var html = await response.Content.ReadAsStringAsync();
 
             Assert.Contains("IA", html);
@@ -78,7 +78,7 @@ namespace Tourism.FeatureTests
             var html = await response.Content.ReadAsStringAsync();
 
             //Assert
-            Assert.Contains($"states/show/2", response.RequestMessage.RequestUri.ToString());
+            Assert.Contains($"States/show/2", response.RequestMessage.RequestUri.ToString());
             Assert.Contains("Ohio", html);
             Assert.Contains("OH", html);
 
