@@ -1,0 +1,9 @@
+﻿@model State
+
+
+<h1>Cities in @Model.Name</h1>
+<a href="/states/1/cities/new">New City</a>
+@foreach(City city in Model.Cities)
+{
+    <h4>City: @city.Name</h4>
+}
